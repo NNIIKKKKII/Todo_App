@@ -1,0 +1,256 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  /* A more vibrant, multi-stop gradient */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #4facfe 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #2d3436;
+}
+
+/* Main Container with Glassmorphism */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 440px;
+  padding: 40px 30px;
+  border-radius: 24px;
+  /* Layered shadow for a "lifting" effect */
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 20px 48px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  font-size: 2rem;
+}
+
+/* Input Group Enhancements */
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid #edf2f7;
+  border-radius: 12px;
+  outline: none;
+  font-size: 16px;
+  background: #fdfdfd;
+
+  /* ADD THIS LINE */
+  color: #2d3436;
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Also ensure the text is visible when the input is focused */
+.input-group input:focus {
+  border-color: #667eea;
+  background: #fff;
+  color: #000;
+  /* Ensures text stays dark on focus */
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+.input-group button {
+  padding: 0 24px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.input-group button:hover {
+  background: #5a67d8;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.input-group button:active {
+  transform: translateY(0);
+}
+
+/* List & Custom Scrollbar */
+ul {
+  list-style: none;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Modern Scrollbar Styling */
+ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Todo Items */
+li {
+  background: #ffffff;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+  animation: slideUp 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #e2e8f0;
+}
+
+.todo-text {
+  flex: 1;
+  margin-right: 12px;
+  color: #4a5568;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: #a0aec0 !important;
+  font-style: italic;
+}
+
+/* Actions Buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-toggle,
+.btn-delete {
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.btn-toggle {
+  background-color: #f0fff4;
+  color: #38a169;
+}
+
+.btn-toggle:hover {
+  background-color: #c6f6d5;
+  transform: rotate(10deg);
+}
+
+.btn-delete {
+  background-color: #fff5f5;
+  color: #e53e3e;
+}
+
+.btn-delete:hover {
+  background-color: #fed7d7;
+  transform: rotate(-10deg);
+}
