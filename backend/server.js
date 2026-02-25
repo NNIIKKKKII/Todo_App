@@ -13,14 +13,12 @@ import cors from "cors";
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
-app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-app.use(cors({
-    origin: "http://localhost:5173"
-}));
+app.use(cors());
 
 // ------------------
 // __dirname Fix (ESM)
